@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles((theme) => ({
   bigDivider: {
     marginLeft: "24px",
     marginRight: "24px",
@@ -16,14 +16,21 @@ const useStyles = makeStyles((theme: Theme) => ({
   smallDivider: {
     marginLeft: "18px",
     marginRight: "18px",
-    marginTop: "16px",
-    marginBottom: "16px",
+    marginTop: "18px",
+    marginBottom: "18px",
+  },
+  titleLink: {
+    textDecoration: "none",
+    color: "#202020",
+    "&:hover": {
+      color: '#165916'
+    }
   },
   link: {
     textDecoration: "none",
     color: "grey",
     "&:hover": {
-      color: '#202020'
+      color: '#165916'
     }
   },
 }));
@@ -34,20 +41,11 @@ const MenuBar = () => {
   let content = (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h5">GRIFFIN D. STOUT</Typography>
+        <Typography variant="h5"><Link to="/" className={styles.titleLink}>GRIFFIN D. STOUT</Link></Typography>
         <Divider
           orientation="vertical"
           flexItem
           className={styles.bigDivider}
-        />
-        <Link to="/" className={styles.link} color="inherit">
-          <Typography variant="body1">HOME</Typography>
-        </Link>
-        <Divider
-          orientation="vertical"
-          flexItem
-          variant="middle"
-          className={styles.smallDivider}
         />
         <Link to="/about" className={styles.link}>
           <Typography variant="body1">ABOUT</Typography>
