@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
       padding: "70px 65px",
     },
     [theme.breakpoints.down("sm")]: {
-      padding: "50px 40px",
+      padding: "45px 30px",
     },
   },
   link: {
