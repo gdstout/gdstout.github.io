@@ -10,7 +10,12 @@ import Contact from "./pages/contact";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    paddingTop: '80px'
+    [theme.breakpoints.up("md")]: {
+      paddingTop: "80px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "60px",
+    },
   },
 }));
 

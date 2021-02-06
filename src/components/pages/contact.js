@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
-    padding: "70px 65px",
+    [theme.breakpoints.up("md")]: {
+      padding: "70px 65px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "50px 40px",
+    },
   },
   link: {
     color: "grey",

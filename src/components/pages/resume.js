@@ -7,15 +7,20 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import AccordianDetails from '@material-ui/core/AccordionDetails';
+import AccordianDetails from "@material-ui/core/AccordionDetails";
 import React from "react";
 import { Link } from "react-router-dom";
 import GetAppIcon from "@material-ui/icons/GetApp";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
-    padding: "70px 65px",
+    [theme.breakpoints.up("md")]: {
+      padding: "70px 65px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "45px 30px",
+    },
   },
   link: {
     textDecoration: "none",
@@ -25,17 +30,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   sectionHead: {
-    margin: 'auto',
+    margin: "auto",
     fontWeight: 200,
-    fontSize: 36
-
+    fontSize: 36,
   },
-  summaryBar: {
-
-    '&$content': {
-      margin: '4px'
-    }
-  }
 }));
 
 const Resume = () => {
@@ -52,7 +50,7 @@ const Resume = () => {
         <Grid item>
           <Typography variant="h3">Interactive Resume</Typography>
         </Grid>
-        
+
         <Grid item>
           <Button
             type="submit"
@@ -73,7 +71,7 @@ const Resume = () => {
       >
         <Grid item>
           <Accordion>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />} >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={styles.sectionHead}>EDUCATION</Typography>
             </AccordionSummary>
             <AccordianDetails>
@@ -81,7 +79,7 @@ const Resume = () => {
             </AccordianDetails>
           </Accordion>
           <Accordion>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />} className={styles.summaryBar}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={styles.sectionHead}>EXPERIENCE</Typography>
             </AccordionSummary>
             <AccordianDetails>
@@ -98,7 +96,9 @@ const Resume = () => {
           </Accordion>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography className={styles.sectionHead}>LEADERSHIP AND SERVICE</Typography>
+              <Typography className={styles.sectionHead}>
+                LEADERSHIP AND SERVICE
+              </Typography>
             </AccordionSummary>
             <AccordianDetails>
               <Typography>Paragraph</Typography>
