@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Paper } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   test: {
@@ -11,9 +11,9 @@ const About = () => {
   const styles = makeStyles();
 
   let content = (
-    <Paper fullWidth className={styles.test}>
-      <div className={styles.test}> Hello<br/>Hello<br/>Hello<br/>Hello<br/>Hello<br/>Hello<br/></div>
-    </Paper>
+    <div>
+      <Typography variant="h3">About Me</Typography>
+    </div>
   );
   return content;
 };

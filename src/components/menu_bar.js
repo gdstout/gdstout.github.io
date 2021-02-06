@@ -58,6 +58,14 @@ const MenuBar = () => {
         <Link to="/resume" className={styles.link} color="inherit">
           <Typography variant="body1">RESUME</Typography>
         </Link>
+        <Divider
+          orientation="vertical"
+          flexItem
+          className={styles.smallDivider}
+        />
+        <Link to="/contact" className={styles.link} color="inherit">
+          <Typography variant="body1">CONTACT</Typography>
+        </Link>
       </Toolbar>
     </AppBar>
   );

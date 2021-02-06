@@ -1,18 +1,22 @@
-import { Divider, Grid, Link, makeStyles, Paper, Typography } from "@material-ui/core";
+import {
+  Button,
+  Grid,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import React from "react";
 import ProfilePic from "../images/griffin_colorado.png";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  emailLink: {
-    color: "#000000",
-    "&:hover": {
-      color: "#165916",
+  container: {
+    [theme.breakpoints.up("lg")]: {
+      alignItems: "flex-start",
+    },
+    [theme.breakpoints.down("md")]: {
+      alignItems: "center",
     },
   },
-  email: {
-    fontWeight: 200,
-    fontSize: 26
-  }
 }));
 
 const ProfileBar = () => {
@@ -20,23 +24,37 @@ const ProfileBar = () => {
 
   let content = (
     <div>
-      <Grid container spacing={2} direction="column" alignItems="flex-start">
+      <Grid
+        container
+        spacing={2}
+        direction="column"
+        className={styles.container}
+      >
         <Grid item>
+          <Link to="/">
           <img src={ProfilePic} width="190px" alt="Profile" />
+          </Link>
         </Grid>
         <Grid item>
           <Typography variant="h3">Griffin D. Stout</Typography>
         </Grid>
         <Grid item>
-          <Link
-            href="mailto: griffindstout@gmail.com"
-            className={styles.emailLink}
-          >
-            <Typography className={styles.email}>griffindstout@gmail.com</Typography>
-          </Link>
+          <Typography variant="body1">
+            Hi! I'm Griffin. My occupation is Software Engineering. I graduated
+            from Iowa State University in 2020, and now live in Arlington, VA,
+            where I work for Capital One.
+          </Typography>
         </Grid>
         <Grid item>
-          <Divider flexItem orientation="horizontal"/>
+          <Typography variant="body1">
+            Please look around my website if you want to learn more about me,
+            what I've done, and what I want to do.
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Button variant="outlined" color="secondary" component={Link} to={"/about"}>
+            <Typography variant="button">Learn More</Typography>
+          </Button>
         </Grid>
       </Grid>
     </div>
